@@ -12,7 +12,8 @@
     "test": "node scripts/test-runner.js",
     "deploy:dev": "node scripts/deploy.js development",
     "deploy:sepolia": "node scripts/deploy.js sepolia",
-    "seed": "node scripts/seed-roles.js"
+    "seed": "node scripts/seed-roles.js",
+    "e2e": "node scripts/e2e.js"
   },
   "license": "MIT",
   "dependencies": {
