@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Supply Chain Tracker</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="/">&#9939; Supply Chain Tracker</a>
+  <nav>
+    <a href="/" class="<%= page === 'home' ? 'active' : '' %>">Home</a>
+    <a href="/track" class="<%= page === 'track' ? 'active' : '' %>">Track</a>
+    <a href="/dashboard" class="<%= page === 'dashboard' ? 'active' : '' %>">Dashboard</a>
+  </nav>
+  <div class="wallet">
+    <span id="netBadge" class="badge muted">...</span>
+    <span id="roleBadge" class="badge hidden"></span>
+    <button id="connectBtn" class="btn">Connect Wallet</button>
+  </div>
+</header>
+<div id="banner" class="banner hidden"></div>
+<main class="container">

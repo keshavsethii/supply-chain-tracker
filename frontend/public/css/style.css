@@ -1,0 +1,51 @@
+:root{--bg:#f6f7fb;--card:#fff;--text:#1b1f2a;--muted:#667085;--line:#e4e7ee;--brand:#4f46e5;--ok:#16a34a;--warn:#d97706;--bad:#dc2626}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1220;--card:#181c2e;--text:#e8eaf3;--muted:#9aa3b8;--line:#2a3050}}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+a{color:var(--brand);text-decoration:none}
+.nav{display:flex;align-items:center;gap:20px;padding:12px 24px;background:var(--card);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.brand{font-weight:700;color:var(--text)}
+.nav nav{display:flex;gap:14px;flex:1}
+.nav nav a{color:var(--muted);padding:4px 2px}
+.nav nav a.active{color:var(--brand);border-bottom:2px solid var(--brand)}
+.wallet{display:flex;gap:8px;align-items:center}
+.container{max-width:960px;margin:24px auto;padding:0 16px;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+.card h2,.card h3{margin-top:0}
+.hero{text-align:center;padding:40px 10px}
+.hero h1{font-size:2rem;margin:0 0 8px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.row.between{justify-content:space-between}
+.hero .row{justify-content:center}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.stat{text-align:center}.stat .num{font-size:1.6rem;font-weight:700}
+.btn{border:1px solid var(--line);background:var(--card);color:var(--text);padding:8px 14px;border-radius:8px;cursor:pointer;font-size:.95rem}
+.btn:hover{border-color:var(--brand)}
+.btn.primary{background:var(--brand);color:#fff;border-color:var(--brand)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+input,select{padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text);font-size:.95rem;width:100%}
+.row input{width:auto;flex:1;min-width:180px}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;align-items:end;margin-bottom:12px}
+.form label{display:flex;flex-direction:column;gap:4px;font-size:.85rem;color:var(--muted)}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{text-align:left;padding:8px;border-bottom:1px solid var(--line);font-size:.92rem}
+.badge{font-size:.78rem;padding:3px 10px;border-radius:999px;background:var(--line);color:var(--text);white-space:nowrap}
+.badge.muted{color:var(--muted)}
+.badge.s0{background:#e0e7ff;color:#3730a3}.badge.s1{background:#fef3c7;color:#92400e}.badge.s2{background:#dbeafe;color:#1e40af}
+.badge.s3{background:#cffafe;color:#155e75}.badge.s4{background:#dcfce7;color:#166534}.badge.s5{background:#fee2e2;color:#991b1b}
+.badge.role{background:#ede9fe;color:#5b21b6}
+.hidden{display:none!important}
+.muted{color:var(--muted)}
+.mono{font-family:ui-monospace,Menlo,monospace;font-size:.82rem;word-break:break-all}
+.kv{display:grid;grid-template-columns:140px 1fr;gap:6px 12px}.kv dt{color:var(--muted)}.kv dd{margin:0}
+.timeline{list-style:none;margin:0;padding:0 0 0 14px;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding:0 0 18px 18px}
+.timeline li::before{content:"";position:absolute;left:-23px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--brand);border:2px solid var(--card)}
+.timeline .when{color:var(--muted);font-size:.82rem}
+.alert{background:#fee2e2;color:#991b1b;padding:10px 14px;border-radius:8px;margin-top:12px}
+.banner{background:#fef3c7;color:#92400e;padding:10px 24px;text-align:center}
+.banner.err{background:#fee2e2;color:#991b1b}
+.toast{position:fixed;bottom:20px;right:20px;max-width:380px;padding:12px 16px;border-radius:10px;background:#111827;color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:10;white-space:pre-wrap}
+.toast.ok{background:#166534}.toast.err{background:#991b1b}
+ul.plain{list-style:none;padding:0;margin:12px 0 0}ul.plain li{padding:6px 0;border-bottom:1px solid var(--line)}
+@media(max-width:600px){.kv{grid-template-columns:1fr}.nav{padding:10px 12px}}

@@ -1,0 +1,32 @@
+<%- include('partials-head', { page }) %>
+<section class="card">
+  <h2>Track a product</h2>
+  <p class="muted">Public page. No wallet needed.</p>
+  <div class="row">
+    <input id="trackId" type="number" min="1" placeholder="Product ID, e.g. 1">
+    <button id="trackBtn" class="btn primary">Track</button>
+  </div>
+</section>
+
+<section id="result" class="hidden">
+  <div class="card">
+    <div class="row between">
+      <h2 id="pName"></h2>
+      <span id="pStatus" class="badge"></span>
+    </div>
+    <dl class="kv">
+      <dt>Product ID</dt><dd id="pId"></dd>
+      <dt>Batch</dt><dd id="pBatch"></dd>
+      <dt>Origin</dt><dd id="pOrigin"></dd>
+      <dt>Manufacturer</dt><dd id="pMfr" class="mono"></dd>
+      <dt>Manufactured</dt><dd id="pDate"></dd>
+      <dt>Expiry</dt><dd id="pExpiry"></dd>
+    </dl>
+    <div id="recallAlert" class="alert hidden">This product has been RECALLED. Do not use or sell it.</div>
+  </div>
+  <div class="card">
+    <h3>Journey</h3>
+    <ol id="timeline" class="timeline"></ol>
+  </div>
+</section>
+<%- include('partials-foot', { page }) %>

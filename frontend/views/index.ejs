@@ -1,0 +1,24 @@
+<%- include('partials-head', { page }) %>
+<section class="hero">
+  <h1>Trace every product, from factory to shelf</h1>
+  <p>Each step is written to the blockchain by the people who handled the product. Nobody can edit history.</p>
+  <div class="row">
+    <a class="btn primary" href="/track">Track a product</a>
+    <a class="btn" href="/dashboard">Open dashboard</a>
+  </div>
+</section>
+
+<section class="grid3">
+  <div class="card stat"><div class="num" id="statTotal">-</div><div>Products registered</div></div>
+  <div class="card stat"><div class="num" id="statNet">-</div><div>Network</div></div>
+  <div class="card stat"><div class="num" id="statBlock">-</div><div>Latest block</div></div>
+</section>
+
+<section class="card">
+  <h2>Latest products</h2>
+  <table class="table">
+    <thead><tr><th>ID</th><th>Name</th><th>Batch</th><th>Origin</th><th>Status</th><th></th></tr></thead>
+    <tbody id="productRows"><tr><td colspan="6" class="muted">Loading...</td></tr></tbody>
+  </table>
+</section>
+<%- include('partials-foot', { page }) %>

@@ -1,0 +1,67 @@
+<%- include('partials-head', { page }) %>
+<section id="gate" class="card">
+  <h2>Dashboard</h2>
+  <p>Connect your wallet to see the actions available for your role.</p>
+</section>
+
+<section id="panel" class="hidden">
+  <div class="card">
+    <div class="kv">
+      <dt>Your address</dt><dd id="myAddr" class="mono"></dd>
+      <dt>Your role</dt><dd id="myRole"></dd>
+    </div>
+    <p id="noRole" class="alert hidden">Your wallet has no role yet. Ask the admin to assign one. You can still use the Track page.</p>
+  </div>
+
+  <div id="secManufacturer" class="card hidden">
+    <h3>Manufacturer: register product</h3>
+    <form id="formCreate" class="form">
+      <label>Product name<input name="name" required maxlength="100"></label>
+      <label>Batch number<input name="batch" required maxlength="50"></label>
+      <label>Origin (factory / farm)<input name="origin" required maxlength="100"></label>
+      <label>Expiry date (optional)<input name="expiry" type="date"></label>
+      <button class="btn primary" type="submit">Create product on-chain</button>
+    </form>
+  </div>
+
+  <div id="secMove" class="card hidden">
+    <h3>Move a product</h3>
+    <p class="muted" id="moveHint"></p>
+    <form id="formMove" class="form">
+      <label>Product ID<input name="id" type="number" min="1" required></label>
+      <label>Action<select name="action" id="actionSelect"></select></label>
+      <label id="locLabel">Location<input name="location" maxlength="100"></label>
+      <label>Notes / reason<input name="notes" maxlength="200"></label>
+      <button class="btn primary" type="submit">Send transaction</button>
+    </form>
+  </div>
+
+  <div id="secInspector" class="card hidden">
+    <h3>Inspector: recalled products</h3>
+    <button id="loadRecalled" class="btn">Load list</button>
+    <ul id="recalledList" class="plain"></ul>
+  </div>
+
+  <div id="secAdmin" class="card hidden">
+    <h3>Admin: manage roles</h3>
+    <form id="formRole" class="form">
+      <label>Wallet address<input name="address" required placeholder="0x..." pattern="0x[a-fA-F0-9]{40}"></label>
+      <label>Role
+        <select name="role">
+          <option value="1">Manufacturer</option>
+          <option value="2">Distributor</option>
+          <option value="3">Retailer</option>
+          <option value="4">Inspector</option>
+          <option value="0">Revoke (no role)</option>
+        </select>
+      </label>
+      <button class="btn primary" type="submit">Update role</button>
+    </form>
+    <form id="formLookup" class="form">
+      <label>Check an address<input name="address" placeholder="0x..." pattern="0x[a-fA-F0-9]{40}"></label>
+      <button class="btn" type="submit">Look up role</button>
+      <span id="lookupOut" class="muted"></span>
+    </form>
+  </div>
+</section>
+<%- include('partials-foot', { page }) %>
