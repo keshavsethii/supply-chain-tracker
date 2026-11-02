@@ -1,0 +1,32 @@
+{
+  "name": "supply-chain-tracker",
+  "version": "1.0.0",
+  "description": "Blockchain supply chain tracker: Solidity + Node.js/Express + Web3 + MetaMask",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "start:dev": "NODE_ENV=development node backend/server.js",
+    "start:prod": "NODE_ENV=production node backend/server.js",
+    "ganache": "ganache --port 7545 --chain.chainId 1337 --chain.networkId 1337 --wallet.deterministic",
+    "compile": "node scripts/compile.js",
+    "test": "node scripts/test-runner.js",
+    "deploy:dev": "node scripts/deploy.js development",
+    "deploy:sepolia": "node scripts/deploy.js sepolia",
+    "seed": "node scripts/seed-roles.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "web3": "1.10.4"
+  },
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "^2.1.15",
+    "ganache": "^7.9.2",
+    "solc": "0.8.20"
+  }
+}
